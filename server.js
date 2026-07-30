@@ -1,8 +1,15 @@
+import dotenv from "dotenv";
+dotenv.config();
+
+console.log("EMAIL_USER:", process.env.EMAIL_USER);
+console.log("EMAIL_PASS:", process.env.EMAIL_PASS);
+
 import express from "express";
 import cors from "cors";
 import nodemailer from "nodemailer";
 import twilio from "twilio";
 import axios from "axios";
+
 
 const client = twilio(
   process.env.TWILIO_ACCOUNT_SID,
@@ -53,7 +60,7 @@ app.post("/send-email", async (req, res) => {
 
     console.log("✅ Email sent to:", email);
 
-    
+    res.json({ success: true, message: "Email sent successfully" });
   } catch (error) {
     console.error("❌ Email error:", error);
     res.json({ success: false });
