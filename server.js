@@ -31,7 +31,7 @@ app.post("/send-email", async (req, res) => {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: "WebWhisper <onboarding@resend.dev>",
+      from: "WebWhisper <orders@yourdomain.com>",
       to: [email],
       subject: "Order Confirmation",
       html: `
