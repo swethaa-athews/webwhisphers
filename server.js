@@ -104,7 +104,7 @@ Thank you for shopping with WebWhispher.`,
 
 });
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "webwhisphers.html"));
+  res.sendFile(path.join(__dirname, "webwisphers.html"));
 });
 
 const PORT = process.env.PORT || 3000;
